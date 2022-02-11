@@ -417,6 +417,11 @@ namespace LatticeModelFactory
 				transformedComponent[1] = SpinComponent::Y;
 				transformedComponent[2] = SpinComponent::X;
 				break;
+		    case 6:
+				transformedComponent[0] = -SpinComponent::Z;
+				transformedComponent[1] = -SpinComponent::Y;
+				transformedComponent[2] = -SpinComponent::X;
+				break;
 			default:
 				throw Exception(Exception::Type::ArgumentError, "Specified spin permutation does not exist");
 				break;
