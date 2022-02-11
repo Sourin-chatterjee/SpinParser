@@ -158,6 +158,7 @@ struct LatticeSiteDescriptor
 {
 	int rid; ///< Representative id of the transformed lattice site. 
 	SpinComponent spinPermutation[3]; ///< Spin permutation involved in the transformation. 
+	float spinPermutationSigns[3];  
 };
 
 /**
