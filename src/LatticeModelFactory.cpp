@@ -417,11 +417,35 @@ namespace LatticeModelFactory
 				transformedComponent[1] = SpinComponent::Y;
 				transformedComponent[2] = SpinComponent::X;
 				break;
-		    case 6:
-				transformedComponent[0] = -SpinComponent::Z;
-				transformedComponent[1] = -SpinComponent::Y;
-				transformedComponent[2] = -SpinComponent::X;
+			case 6:
+	      		transformedComponentSign[0] = SpinComponent::X;
+				transformedComponentSign[1] = SpinComponent::Y;
+				transformedComponentSign[2] = SpinComponent::Z;
 				break;
+			case 7:
+				transformedComponentSign[0] = SpinComponent::X;
+				transformedComponentSign[1] = SpinComponent::Z;
+				transformedComponentSign[2] = SpinComponent::Y;
+				break;
+			case 8:
+			  	transformedComponentSign[0] = SpinComponent::Y;
+				transformedComponentSign[1] = SpinComponent::X;
+				transformedComponentSign[2] = SpinComponent::Z;
+				break;
+			case 9:
+				transformedComponentSign[0] = SpinComponent::Y;
+				transformedComponentSign[1] = SpinComponent::Z;
+				transformedComponentSign[2] = SpinComponent::X;
+				break;
+			case 10:
+				transformedComponentSign[0] = SpinComponent::Z;
+				transformedComponentSign[1] = SpinComponent::X;
+				transformedComponentSign[2] = SpinComponent::Y;
+				break;
+			case 11:
+				transformedComponentSign[0] = SpinComponent::Z;
+				transformedComponentSign[1] = SpinComponent::Y;
+				transformedComponentSign[2] = SpinComponent::X;
 			default:
 				throw Exception(Exception::Type::ArgumentError, "Specified spin permutation does not exist");
 				break;
@@ -457,6 +481,7 @@ namespace LatticeModelFactory
 		}
 
 		SpinComponent transformedComponent[3];
+		bool transformedComponentSign[3];
 	};
 
 	//return a list of all nearest neighbors of given lattice site
