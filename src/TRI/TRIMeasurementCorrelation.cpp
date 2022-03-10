@@ -292,11 +292,11 @@ void TRIMeasurementCorrelation::_calculateCorrelation(const int iterator) const
 		for (auto j = FrgCommon::lattice().getRange(i); j != FrgCommon::lattice().end(); ++j)
 		{
 			int rid;
-
+            float sign =1.0f;
 			SpinComponent sx(SpinComponent::X);
 			SpinComponent sy(SpinComponent::Y);
 			SpinComponent sz(SpinComponent::Z);
-			rid = FrgCommon::lattice().symmetryTransform(i, j, sx, sy, sz);
+			rid = FrgCommon::lattice().symmetryTransform(i, j, sx, sy, sz,sign);
 
 			_correlationsDD[offset] = susceptibility.bundle(15)[rid];
 			_correlationsXX[offset] = susceptibility.bundle(4 * static_cast<int>(sx) + static_cast<int>(sx))[rid];

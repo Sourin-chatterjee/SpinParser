@@ -212,8 +212,9 @@ public:
 			sign *= _zeta(static_cast<int>(s1)) *_zeta(static_cast<int>(s2));
 		}
 
-		int siteOffset = FrgCommon::lattice().symmetryTransform(i1, i2, s1, s2);
-
+		// int siteOffset = FrgCommon::lattice().symmetryTransform(i1, i2, s1, s2);   // Need to make changes here , update with sign
+        
+		int siteOffset = FrgCommon::lattice().symmetryTransform(i1, i2, s1, s2,sign);
 		if (channel == FrequencyChannel::S)
 		{
 			int exactS = FrgCommon::frequency().offset(s);
@@ -327,12 +328,18 @@ public:
 			std::swap(i1, i2);
 			std::swap(s1, s2);
 		}
-		int siteOffset = FrgCommon::lattice().symmetryTransform(i1, i2, s1, s2);
+		
+		//int siteOffset = FrgCommon::lattice().symmetryTransform(i1, i2, s1, s2);   // update this with sign.
+		
+		float sign =1.0f;
+		int siteOffset = FrgCommon::lattice().symmetryTransform(i1, i2, s1, s2,sign); 
 		int spinOffset = (4 * static_cast<int>(s1) + static_cast<int>(s2)) *FrgCommon::lattice().size;
 
 		float value = 0.0f;
 		for (int i = 0; i < n; ++i) value += accessBuffer.sign[i][static_cast<int>(s1)][static_cast<int>(s2)] * accessBuffer.frequencyWeights[i] * _data[accessBuffer.frequencyOffsets[i] + spinOffset + siteOffset];
-		return value;
+		// return value;
+
+		return sign*value;
 	}
 
 	/**
