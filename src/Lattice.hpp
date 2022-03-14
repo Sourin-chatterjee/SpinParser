@@ -22,7 +22,7 @@ namespace LatticeModelFactory {
 	std::pair<Lattice *, SpinModel *> newLatticeModel(const LatticeModelFactory::LatticeUnitCell &uc, const LatticeModelFactory::SpinModelUnitCell &spinModelDefinition, const int latticeRange, const std::string &ldfPath);
 };
 
-float sign =1.0f;
+// float sign =1.0f;
 /**
  * @brief Component of a spin operator. 
  */
@@ -418,7 +418,7 @@ public:
 		
 		ASSERT(_symmetryTable[i1.id * _dataSize + i2.id].rid != -1);
 		if (spinComponent != SpinComponent::None) spinComponent = _symmetryTable[i1.id * _dataSize + i2.id].spinPermutation[static_cast<int>(spinComponent)];
-                                       
+                                    
         if(spinComponent == SpinComponent::MinusX)
 		{
 			spinComponent = SpinComponent::X;
@@ -460,7 +460,7 @@ public:
 		 
         if(spinComponent1 == SpinComponent::MinusX)
 		{
-			spinComponent1 = SpinComponent::MinusX;
+			spinComponent1 = SpinComponent::X;
 			sign=-sign;
 		}
         if(spinComponent1 == SpinComponent::MinusY)

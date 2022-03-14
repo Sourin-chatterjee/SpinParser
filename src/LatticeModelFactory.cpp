@@ -18,7 +18,6 @@
 #include "lib/Exception.hpp"
 #include "lib/Log.hpp"
 
-
 #define __EPSILON 0.00001
 #define PI 3.14159265358979323846
 
@@ -907,7 +906,7 @@ namespace LatticeModelFactory
 
 									// Now we need to perform the mapping from MinusX->X,etc.
 							
-									float sign=1.0f;
+								 	float sign =1.0f;
 									if(transformedComponent1 == SpinComponent::MinusX)    
 									{
 										transformedComponent1  = SpinComponent::X;

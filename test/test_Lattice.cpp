@@ -222,6 +222,7 @@ BOOST_FIXTURE_TEST_CASE(HoneycombLatticeSymmetry, HoneycombLatticeFixture)
 		SpinComponent s1 = SpinComponent::X;
 		SpinComponent s2 = SpinComponent::Y;
 		SpinComponent s3 = SpinComponent::Z;
+		float sign=1.0f;
 		int t = l->symmetryTransform(i1, i2, s1, s2, s3,sign);
 
 		SpinComponent s1p = sxTarget[n];
@@ -268,6 +269,7 @@ BOOST_FIXTURE_TEST_CASE(HoneycombLatticeOverlap, HoneycombLatticeFixture)
 			SpinComponent sx2 = s2xList[n];
 			SpinComponent sy2 = s2yList[n];
 			SpinComponent sz2 = s2zList[n];
+			float sign=1.0f;
 			int i1p = l->symmetryTransform(l->zero(), i1, sx1, sy1, sz1,sign);
 			int i2p = l->symmetryTransform(l->zero(), i2, sx2, sy2, sz2,sign);
 
