@@ -908,38 +908,37 @@ namespace LatticeModelFactory
 									// Now we need to perform the mapping from MinusX->X,etc.
 							
 									float sign=1.0f;
-									if(spinComponent1 == SpinComponent::MinusX)    
+									if(transformedComponent1 == SpinComponent::MinusX)    
 									{
-										spinComponent1  = SpinComponent::X;
+										transformedComponent1  = SpinComponent::X;
 										sign =-sign;
 									}
-									if(spinComponent1  == SpinComponent::MinusY)
+									if(transformedComponent1  == SpinComponent::MinusY)
 									{
-										spinComponent1  = SpinComponent::Y;
+										transformedComponent1  = SpinComponent::Y;
 										sign=-sign;
 									}
-									if(spinComponent1  == SpinComponent::MinusZ)
+									if(transformedComponent1  == SpinComponent::MinusZ)
 									{
-										spinComponent1  == SpinComponent::Z;
+										transformedComponent1  == SpinComponent::Z;
 										sign = -sign;
 									}
 
-									if(spinComponent2 == SpinComponent::MinusX)
+									if(transformedComponent2 == SpinComponent::MinusX)
 									{
-										spinComponent2 = SpinComponent::X;
+										transformedComponent2 = SpinComponent::X;
 										sign =-sign;
 									}
-									if(spinComponent2 == SpinComponent::MinusY)
+									if(transformedComponent2 == SpinComponent::MinusY)
 									{
-										spinComponent2 = SpinComponent::Y;
+										transformedComponent2 = SpinComponent::Y;
 										sign=-sign;
 									}
-									if(spinComponent2 == SpinComponent::MinusZ)
+									if(transformedComponent2 == SpinComponent::MinusZ)
 									{
-										spinComponent2 = SpinComponent::Z;
+										transformedComponent2 = SpinComponent::Z;
 										sign = -sign;
 									}
-
 								// here the transformed components must be X,Y,Z
 
 									if (interaction.interactionStrength[s1][s2] != sign*targetInteractionStrength[static_cast<int>(transformedComponent1)][static_cast<int>(transformedComponent2)]) validPermutation = false;
