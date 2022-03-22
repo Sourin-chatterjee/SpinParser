@@ -845,7 +845,7 @@ namespace LatticeModelFactory
 
 					//check if spin couplings are invariant under transformation up to a global permutation of spin components
 					bool spinTransformationExists = false;
-					for (int i = 0; i < 6; ++i)
+					for (int i = 0; i < 48; ++i)  // Extend this to all 48 permutations.
 					{
 						SpinPermutation permutation(i);
 						bool validPermutation = true;
